@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Private Message</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f8d7e8, #fdf6f9);
+      background: linear-gradient(135deg, #d8f3dc, #b7e4c7);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -56,14 +57,14 @@
       margin-top: 14px;
       border: none;
       border-radius: 14px;
-      background: #d96b9f;
+      background: #40916c;
       color: white;
       font-size: 16px;
       cursor: pointer;
     }
 
     button:hover {
-      background: #c8568b;
+      background: #2d6a4f;
     }
 
     .hidden {
@@ -76,66 +77,117 @@
       font-size: 14px;
     }
 
-    audio {
-      width: 100%;
-      margin-top: 20px;
-    }
-
     .small-note {
       margin-top: 18px;
       font-size: 13px;
       color: #999;
     }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background: #40916c;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 16px;
+    }
+
+    a:hover {
+      background: #2d6a4f;
+    }
   </style>
 </head>
+
 <body>
   <div class="card">
+
     <div id="lock-screen">
-      <h1>For You 🤍</h1>
-      <p>This message is locked. Enter the password to open it.</p>
+      <h1>For My Shrimp 💚</h1>
 
-      <input id="passwordInput" type="password" placeholder="Enter password" />
-      <button onclick="checkPassword()">Unlock Message</button>
+      <p>
+        This message is locked. Enter the password to open it.
+      </p>
 
-      <div id="errorMessage" class="error hidden">Wrong password. Try again.</div>
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="Enter password"
+      />
+
+      <button onclick="checkPassword()">
+        Unlock Message
+      </button>
+
+      <div id="errorMessage" class="error hidden">
+        Wrong password. Try again.
+      </div>
     </div>
 
     <div id="message-screen" class="hidden">
-      <h1>Unlocked 🤍</h1>
-      <p>Here is your private voice message.</p>
 
-      <!-- Replace the link below with your direct audio file link -->
-      <a href="https://drive.google.com/drive/folders/1A0e5g8AFqqGmLBPRJM3RVKgij-hgrtw6\?usp=drive_link" target="_blank">
-  Open Your Message 🤍
-</a>
+      <h1>Unlocked 💚</h1>
 
-      <p class="small-note">You can replay it anytime from this page.</p>
+      <p>
+        Here is your private message.
+      </p>
+
+      <a href="https://drive.google.com/drive/folders/1A0e5g8AFqqGmLBPRJM3RVKgij-hgrtw6?usp=drive_link" target="_blank">
+        Open Your Message 💚
+      </a>
+
+      <p class="small-note">
+        You can come back anytime.
+      </p>
+
     </div>
+
   </div>
 
   <script>
-    // Change this to whatever password you want
-    const correctPassword = "moon";
+
+    const correctPassword = "Cactus";
 
     function checkPassword() {
-      const enteredPassword = document.getElementById("passwordInput").value.trim();
-      const errorMessage = document.getElementById("errorMessage");
-      const lockScreen = document.getElementById("lock-screen");
-      const messageScreen = document.getElementById("message-screen");
+
+      const enteredPassword =
+        document.getElementById("passwordInput").value.trim();
+
+      const errorMessage =
+        document.getElementById("errorMessage");
+
+      const lockScreen =
+        document.getElementById("lock-screen");
+
+      const messageScreen =
+        document.getElementById("message-screen");
 
       if (enteredPassword === correctPassword) {
+
         lockScreen.classList.add("hidden");
+
         messageScreen.classList.remove("hidden");
+
       } else {
+
         errorMessage.classList.remove("hidden");
+
       }
     }
 
-    document.getElementById("passwordInput").addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        checkPassword();
-      }
-    });
+    document
+      .getElementById("passwordInput")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+          checkPassword();
+
+        }
+
+      });
+
   </script>
 </body>
 </html>
